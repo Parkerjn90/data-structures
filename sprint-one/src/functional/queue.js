@@ -10,7 +10,8 @@ var Queue = function () {
 
   someInstance.enqueue = function (value) {
     // define new key in {storage} as objLength, value = input value, increment objLength
-    storage[objLength++] = value;
+    storage[firstKey + objLength] = value;
+    objLength++;
   };
 
   someInstance.dequeue = function () {
@@ -18,6 +19,7 @@ var Queue = function () {
     var firstValue = storage[firstKey];
     // remove first property (key = firstKey)
     delete (storage[firstKey]);
+    firstKey++;
     // increment firstKey variable by 1
     if (objLength > 0) {
       objLength -= 1;
