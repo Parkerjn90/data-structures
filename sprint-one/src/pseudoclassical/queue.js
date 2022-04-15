@@ -23,7 +23,7 @@ Queue.prototype.dequeue = function() {
   // if current stack Length > 0
   if (this.stackLength > 0) {
     // decrease stack length
-    this.stackLength++;
+    this.stackLength--;
   }
   // return oldest value in stack
   return oldestKey;
