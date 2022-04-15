@@ -1,8 +1,15 @@
 var Queue = function() {
-  // Hey! Rewrite in the new style. Your code will wind up looking very similar,
-  // but try not not reference your old code in writing the new style.
+  var queueObject = {};
+  _.extend(queueObject, queueMethods);
+  return queueObject;
 };
 
 var queueMethods = {};
-
-
+// create storage object
+var storage = {};
+// create storageLength counter
+var storageLength = 0;
+// store function to indicate size at size key in queueMethods
+queueMethods.size = function() {
+  return storageLength;
+};
