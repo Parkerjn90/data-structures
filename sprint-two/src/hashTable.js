@@ -53,9 +53,21 @@ HashTable.prototype.retrieve = function (k) {
 };
 
 HashTable.prototype.remove = function (k) {
-  //
   var index = getIndexBelowMaxForKey(k, this._limit);
-  this._storage.set(index, undefined);
+  // create bucket variable set to the get function in _storage
+  var bucket = this._storage.get(index);
+  // iterate over bucketarray
+  for (var i = 0; i < bucket.length; i++) {
+
+    // if first value of current index is equal to given key
+    console.log(bucket);
+
+    if (bucket[i][0] === k) {
+      console.log(bucket);
+      // splice current index from array
+      bucket[i].splice(1);
+    }
+  }
 };
 
 
