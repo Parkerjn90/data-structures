@@ -26,7 +26,6 @@ treeMethods.contains = function (target) {
     if (this.children.length) {
       // for EACH child,
       for (var i = 0; i < this.children.length; i++) {
-        console.log('this.children[i]', this.children[i]);
         // result will equal whether or not each(any) child contains target
         if (this.children[i].contains(target)) {
           result = true;
@@ -37,18 +36,6 @@ treeMethods.contains = function (target) {
   // return result
   return result;
 };
-
-// var newTree = Tree('x')
-// newTree.value
-
-
-
 /*
  * Complexity: What is the time complexity of the above functions?
  */
-
-
-// I - value
-// O - an object with the properties:
-         // value: = inputvalue
-         // children: =
