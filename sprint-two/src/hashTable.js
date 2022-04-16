@@ -60,10 +60,7 @@ HashTable.prototype.remove = function (k) {
   for (var i = 0; i < bucket.length; i++) {
 
     // if first value of current index is equal to given key
-    console.log(bucket);
-
     if (bucket[i][0] === k) {
-      console.log(bucket);
       // splice current index from array
       bucket[i].splice(1);
     }
