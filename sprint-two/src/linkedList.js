@@ -33,23 +33,16 @@ var LinkedList = function () {
 
   list.contains = function (target) {
     // define current node as headde OR current node
-    var currentNode = this.head || this;
-    console.log(currentNode);
-    // if current Node at value is equal to target,
-    if (currentNode.value === target) {
-      // return true;
-      return true;
-    }
-    // check if current object at next is empty(null), if yes:
-    if (currentNode.next) {
-
-
-      // else if current object at next has a child (is not null)
-    } else {
-      // return result of contains called on current object at next
-      console.log('currentNode: ', currentNode);
-      console.log('currentNode.next: ', currentNode.next);
-      return currentNode.contains(target);
+    var currentNode = this.head;
+    // while current node at next includes a value (is not null)
+    while (currentNode) {
+      // if current node at value is equal to target
+      if (currentNode.value === target) {
+        // return true
+        return true;
+      }
+      // redefine current node to current node at next
+      currentNode = currentNode.next;
     }
     // return false if none of the above
     return false;
@@ -72,3 +65,6 @@ var Node = function (value, next) {
 /*
  * Complexity: What is the time complexity of the above functions?
  */
+// addTail = O(1)
+// removeHead = O(1)
+// contains = O(n)
